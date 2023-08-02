@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script>
+        // я використовую метод масиву .from щоб створити новий масив заданої довжини
+        // де кожен елемент генерується стрілочною функцією, яка в свою чергу вибирає
+        // зі заданої стрінги елементи з рандомними індексами
+         
+        function generateKey(length, characters) {
+            const charactersLength = characters.length;
+
+            const key = Array.from({ length }, () => characters.charAt(Math.floor(Math.random() * charactersLength))).join('');
+
+            return key;
+        }
+        const charactersSet = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()+';
+        const length = 8;
+        const randomKey = generateKey(length, charactersSet);
+        console.log(randomKey);           
+    </script>
+</body>
+</html>
